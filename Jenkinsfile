@@ -7,7 +7,7 @@ pipeline {
             defaultValue: "/docker.io/username/repository:tag",
             description: 'Enter the image URL'
         )
-        
+
         choice(
             name: 'ENVIRONMENT',
             choices: ['dev', 'staging', 'production'],
@@ -69,7 +69,7 @@ pipeline {
             }
         }
 
-        stage('test') {
+        stage('build') {
             steps {
                 echo "Building for ${params.ENVIRONMENT}"
                 echo "Using image: ${params.IMAGE_URL}"
