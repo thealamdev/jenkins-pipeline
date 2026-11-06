@@ -71,6 +71,11 @@ pipeline {
 
         stage('build') {
             steps {
+                script {
+                    when {
+                        expression { return params.ENVIRONMENT == 'production' }
+                    }
+                }
                 echo "Building for ${params.ENVIRONMENT}"
                 echo "Using image: ${params.IMAGE_URL}"
 
