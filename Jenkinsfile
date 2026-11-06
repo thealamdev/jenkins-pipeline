@@ -88,6 +88,7 @@ pipeline {
     post {
         always {
             echo 'Pipeline execution completed!'
+            echo 'Github webhook triggered!'
         }
 
         success {
