@@ -8,7 +8,7 @@ pipeline {
     parameters {
         string(
             name: 'IMAGE_URL',
-            defaultValue: "${IMAGE_URL}",
+            defaultValue: "/docker.io/thealamdev/repository:tag",
             description: 'Enter the image URL'
         )
     }
