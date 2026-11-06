@@ -84,4 +84,30 @@ pipeline {
             }
         }
     }
+
+    post {
+        always {
+            echo 'Pipeline execution completed!'
+        }
+
+        success {
+            echo "SUCCESS: ${params.ENVIRONMENT} deployment completed!"
+        }
+
+        failure {
+            echo "FAILED: ${params.ENVIRONMENT} deployment failed!"
+        }
+
+        unstable {
+            echo 'WARNING: Pipeline is unstable!'
+        }
+
+        aborted {
+            echo 'Pipeline was aborted!'
+        }
+
+        cleanup {
+            echo 'Cleaning up resources...'
+        }
+    }
 }
