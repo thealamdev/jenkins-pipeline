@@ -7,11 +7,13 @@ pipeline {
             defaultValue: "/docker.io/username/repository:tag",
             description: 'Enter the image URL'
         )
+        
         choice(
             name: 'ENVIRONMENT',
             choices: ['dev', 'staging', 'production'],
             description: 'Select the environment'
-        ),
+        )
+
         booleanParam(
             name: 'ENABLE_FEATURE',
             defaultValue: true,
